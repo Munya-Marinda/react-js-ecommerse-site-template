@@ -1,0 +1,288 @@
+/* PARENT */
+.pageParentContainer {
+  width: 100%;
+  padding: 50px 0px 0px 0px;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: space-between;
+}
+
+/* 
+====================================================
+                    ADD TO CART MODAL
+====================================================
+*/
+
+.modalContentParent {
+  color: #424242ff;
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+  padding: 10px 10px 10px 10px;
+  border-radius: 7px;
+  font-weight: bold;
+}
+/* 
+====================================================
+                    LEFT HALF
+====================================================
+*/
+
+.shopSearchInput {
+  background-color: #424242ff;
+  width: 100%;
+  border: 0px;
+  border-radius: 5px;
+  padding: 15px 10px 15px 10px;
+  margin-bottom: 20px;
+}
+
+.filterContainer {
+  background-color: #424242ff;
+  border-radius: 15px;
+  padding: 15px;
+  color: white;
+  margin: 0px 0px 20px 0px;
+}
+
+.filterContainer > h4 {
+  width: 100%;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 0px;
+  margin: 0px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid wheat;
+}
+
+/* FILTERS */
+
+.allFiltersContainer {
+}
+
+.allFiltersSubContainerTitle > span {
+  /* FONT */
+  color: black;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+.allFiltersSubContainer {
+  background-color: transparent;
+  /* margin: 5px; */
+}
+
+.allFiltersSubContainerTitle {
+  cursor: pointer;
+  padding: 5px 7px 5px 7px;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.priceRangesToFilterBy {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  list-style: none;
+  padding: 0px;
+}
+
+.priceRangesToFilterBy > li {
+  cursor: pointer;
+  padding: 5px 7px 5px 7px;
+  background-color: rgb(255, 242, 220);
+  border-radius: 10px;
+  margin: 5px;
+  /* FONT */
+  color: black;
+}
+
+/* TAGS */
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.tag:hover {
+  background-color: rgb(213, 213, 213);
+}
+
+.tag {
+  cursor: pointer;
+  padding: 5px 7px 5px 7px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 5px;
+  /* FONT */
+  color: black;
+  letter-spacing: 1px;
+}
+
+/* 
+====================================================
+                    RIGHT HALF
+====================================================
+*/
+
+.smallCard > img:hover {
+  cursor: pointer;
+  animation: bounce 1s infinite alternate;
+}
+
+.smallCard > img {
+  width: 250px;
+  margin: auto;
+  /* border: 1px solid red; */
+}
+
+.smallCard {
+  width: 300px;
+  height: fit-content;
+  margin: 0px 10px 30px 10px;
+  padding: 20px 15px 15px 15px;
+  background-color: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  border-radius: 15px;
+  /* justify-content: stretch;; */
+}
+
+.cardContainerTopFilter {
+  border-bottom: 1px solid #424242ff;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  /* FONT */
+  font-size: 22px;
+  font-weight: bold;
+  color: #424242ff;
+}
+
+.cardContainerTopFilter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 0px 0px 0px;
+}
+
+.cardContainerViewOptions {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #424242ff;
+  padding: 10px 5px 5px 5px;
+  margin: 4px 0px 0px 0px;
+  font-size: 16x;
+  text-transform: uppercase;
+}
+
+.cardContainerParent {
+  text-transform: uppercase;
+  width: 80%;
+}
+
+.cardContainer {
+  width: 80%;
+  /* border: 1px solid black; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.sideBarContainer {
+  width: 20%;
+  height: 100%;
+  padding: 0px 30px 0px 0px;
+  color: black;
+  /* border: 1px solid green; */
+}
+
+.smallCardRowOne {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 20px 0px 15px 0px;
+  padding: 10px 0px 10px 0px;
+  border-top: 1px solid #424242ff;
+  border-bottom: 1px solid #424242ff;
+}
+
+.smallCardRowTwo {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.smallCardName {
+  /* FONT */
+  font-size: 18px;
+  color: #424242ff;
+}
+
+.smallCardPrice {
+  /* FONT */
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.smallCardBuyNow,
+.smallCardAddToCart {
+  width: 48%;
+  padding: 10px 5px 10px 5px;
+  cursor: pointer;
+}
+
+.smallCardBuyNow {
+  background-color: green;
+  border-radius: 5px;
+  border: 0px;
+  /* FONT */
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.smallCardBuyNow:active {
+  background-color: rgb(0, 87, 0);
+}
+
+.smallCardAddToCart {
+  background-color: #424242ff;
+  border-radius: 5px;
+  border: 0px;
+  /* FONT */
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.smallCardAddToCart:active {
+  background-color: rgb(48, 48, 48);
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+    transform: rotate(0deg);
+  }
+  0% {
+    transform: scale(1);
+    transform: rotate(2deg);
+  }
+  100% {
+    transform: scale(1.02);
+    transform: rotate(-2deg);
+  }
+}
