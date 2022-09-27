@@ -63,7 +63,7 @@ const Opener = () => {
   //
 
   const ItemCount = (itemID) => {
-    return 1;
+    return 0;
   };
 
   //
@@ -100,18 +100,8 @@ const Opener = () => {
             <span className={styles.smallCardName}>{productName}</span>
             <span className={styles.smallCardPrice}>R{price}</span>
           </div>
-          <div className={styles.smallCardRowTwo}>
-            <button
-              className={styles.smallCardBuyNow}
-              onClick={() => {
-                window.location.assign("store?productID=" + itemID);
-              }}
-            >
-              BUY NOW
-            </button>
-            {/* ============== ADD TO CART MODAL ============== */}
-            <ProductsSpecs itemID={itemID} />
-          </div>
+          {/* ============== ADD TO CART MODAL ============== */}
+          <ProductsSpecs itemID={itemID} />
         </div>
       </Fragment>
     );
@@ -124,26 +114,34 @@ const Opener = () => {
   const ProductsSpecs = ({ itemID }) => {
     return (
       <div className={styles.modalContentParent}>
-        <span>QUANTITY: </span>
-        <span
-          // className={styles.smallCardAddToCart}
-          onClick={() => {
-            dispatch(removeItem(itemID));
-          }}
-        >
-          {" (sub) "}
-        </span>
-        <span>{ItemCount(itemID)}</span>
-        <span
-          // className={styles.smallCardAddToCart}
-          onClick={() => {
-            dispatch(
-              addItem({ itemID: itemID, quantity: ItemCount(itemID) + 1 })
-            );
-          }}
-        >
-          {" (add) "}
-        </span>
+        <div className={styles.cartCountContainer}>
+          <span className={styles.cartCountText} >{ItemCount(itemID)}</span>
+          <img
+            src={"/icons/pagination/cart/cart_theme_color.svg"}
+            style={{ width: "25px", height: "25px" }}
+          />
+        </div>
+        <div className={styles.cartButtonContainer}>
+          <span
+            className={styles.smallCardRemoveFromCart}
+            onClick={() => {
+              dispatch(removeItem(itemID));
+            }}
+          >
+            {"-"}
+          </span>
+          <span
+            style={{ margin: "0px 0px 0px 5px" }}
+            className={styles.smallCardAddToCart}
+            onClick={() => {
+              dispatch(
+                addItem({ itemID: itemID, quantity: ItemCount(itemID) + 1 })
+              );
+            }}
+          >
+            {"+"}
+          </span>
+        </div>
       </div>
     );
   };
@@ -293,7 +291,7 @@ const Opener = () => {
             <Pagination />
             <div className={styles.cardContainer}>
               {products.map((product, index) => (
-                <div key={index} style={{ width: "fit-content" }}>
+                <Fragment key={index}>
                   <SmallCard
                     productName={product.productName}
                     price={product.price}
@@ -301,7 +299,7 @@ const Opener = () => {
                     itemID={product.itemID}
                     tags={products.tags}
                   />
-                </div>
+                </Fragment>
               ))}
             </div>
             <Pagination />

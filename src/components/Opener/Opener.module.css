@@ -17,11 +17,16 @@
 
 .modalContentParent {
   color: #424242ff;
-  background-color: white;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  width: fit-content;
-  padding: 10px 10px 10px 10px;
+  /* background-color: white; */
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); */
+  /* width: max-content; */
+  padding: 0px 0px 10px 0px;
   border-radius: 7px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   font-weight: bold;
 }
 /* 
@@ -30,9 +35,22 @@
 ====================================================
 */
 
+.cartCountContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartCountText {
+  font-size: 22px;
+  transform: translateY(-2px);
+  margin: 0px 5px 0px 0px;
+}
+
 .shopSearchInput {
   background-color: #424242ff;
-  width: 100%;
+  width: 90%;
   border: 0px;
   border-radius: 5px;
   padding: 15px 10px 15px 10px;
@@ -138,17 +156,17 @@
 }
 
 .smallCard > img {
-  width: 250px;
+  width: 100%;
   margin: auto;
   /* border: 1px solid red; */
 }
 
 .smallCard {
-  width: 300px;
+  width: 20%;
   height: fit-content;
   margin: 0px 10px 30px 10px;
   padding: 20px 15px 15px 15px;
-  background-color: white;
+  background-color: rgb(255, 251, 202);
   color: black;
   display: flex;
   flex-direction: column;
@@ -179,7 +197,7 @@
   cursor: pointer;
   border-radius: 5px;
   background-color: #424242ff;
-  padding: 10px 5px 5px 5px;
+  padding: 10px 5px 10px 5px;
   margin: 4px 0px 0px 0px;
   font-size: 16x;
   text-transform: uppercase;
@@ -188,10 +206,11 @@
 .cardContainerParent {
   text-transform: uppercase;
   width: 80%;
+  padding: 0px 30px 0px 0px;
 }
 
 .cardContainer {
-  width: 80%;
+  width: 100%;
   /* border: 1px solid black; */
   display: flex;
   flex-wrap: wrap;
@@ -202,8 +221,12 @@
 .sideBarContainer {
   width: 20%;
   height: 100%;
-  padding: 0px 30px 0px 0px;
+  padding: 0px 30px 0px 30px;
   color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   /* border: 1px solid green; */
 }
 
@@ -239,37 +262,31 @@
   font-weight: bold;
 }
 
-.smallCardBuyNow,
+.smallCardRemoveFromCart {
+  padding: 1px 11px 4px 11px;
+}
+
 .smallCardAddToCart {
-  width: 48%;
-  padding: 10px 5px 10px 5px;
+  padding: 1px 8px 4px 8px;
+}
+
+.smallCardRemoveFromCart,
+.smallCardAddToCart {
+  /* width: 48%; */
   cursor: pointer;
-}
-
-.smallCardBuyNow {
-  background-color: green;
-  border-radius: 5px;
+  background-color: rgb(116, 115, 98);
+  color: white;
+  border-radius: 25px;
   border: 0px;
   /* FONT */
   font-weight: bold;
+  font-size: 20px;
   letter-spacing: 1px;
 }
 
-.smallCardBuyNow:active {
-  background-color: rgb(0, 87, 0);
-}
-
-.smallCardAddToCart {
-  background-color: #424242ff;
-  border-radius: 5px;
-  border: 0px;
-  /* FONT */
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
+.smallCardRemoveFromCart:active,
 .smallCardAddToCart:active {
-  background-color: rgb(48, 48, 48);
+  background-color: rgb(171, 169, 143);
 }
 
 @keyframes bounce {
