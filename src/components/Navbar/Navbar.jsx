@@ -11,6 +11,9 @@ import { useSelector, useDispatch } from "react-redux";
 // IMPORT DATA
 import { business } from "../../data/business.js";
 
+// BREAKPOINT
+import { useBreakPoint } from "../../hooks/useBreakPoint";
+
 //
 //
 //
@@ -37,8 +40,12 @@ import { business } from "../../data/business.js";
 //
 
 const Navbar = () => {
+  // BREAKPOINT
+  const breakpoint = useBreakPoint();
+
   // GET DATA FOR THIS PAGE
   const logoFullURL = business.logoFullURL;
+  const logoSqrURL = business.logoSqrURL;
 
   // CART
   const cart = useSelector((state) => state.cart);
@@ -59,7 +66,6 @@ const Navbar = () => {
   //
   //
   //
-
   //
   //
   //
@@ -67,24 +73,6 @@ const Navbar = () => {
   //
   //
   //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-  //
-
   //
   //
   //
@@ -115,34 +103,52 @@ const Navbar = () => {
       <nav className={styles.nav_main}>
         <ul className={styles.nav_ul}>
           <li>
-            <a href={"/"}>
+            {breakpoint !== "sm" ? (
+              <a href={"/"}>
+                <img
+                  height={"40px"}
+                  width={"200px"}
+                  src={logoFullURL}
+                  className={styles.nav_logo}
+                />
+              </a>
+            ) : (
               <img
                 height={"40px"}
-                width={"200px"}
-                src={logoFullURL}
+                width={"40px"}
+                src={"icons/navbar/drawer_btn.svg"}
                 className={styles.nav_logo}
               />
-            </a>
+            )}
           </li>
-          <li>
-            <ul className={styles.nav_ul_inner}>
-              <li>
-                <a href={"/store"}>store</a>
-              </li>
-              <li>
-                <a href={"/special-offers"}>special offers</a>
-              </li>
-              <li>
-                <a href={"/new-arrivals"}>new arrivals</a>
-              </li>
-              <li>
-                <a href={"/contact-us"}>contact us</a>
-              </li>
-              <li>
-                <a href={"/cart"}>cart ({cart.cnt})</a>
-              </li>
-            </ul>
-          </li>
+          {breakpoint !== "sm" ? (
+            <li className="nav_links">
+              <ul className={styles.nav_ul_inner}>
+                <li>
+                  <a href={"/store"}>store</a>
+                </li>
+                <li>
+                  <a href={"/special-offers"}>special offers</a>
+                </li>
+                <li>
+                  <a href={"/new-arrivals"}>new arrivals</a>
+                </li>
+                <li>
+                  <a href={"/contact-us"}>contact us</a>
+                </li>
+                <li>
+                  <a href={"/cart"}>cart ({cart.cnt})</a>
+                </li>
+              </ul>
+            </li>
+          ) : (
+            <img
+              height={"30px"}
+              width={"30px"}
+              src={"icons/navbar/search.svg"}
+              className={styles.nav_logo}
+            />
+          )}
         </ul>
       </nav>
     </Fragment>

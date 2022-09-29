@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="filter_white.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   id="svg852"
+   version="1.1"
+   viewBox="0 0 32.404373 36.261871"
+   height="36.261871mm"
+   width="32.404373mm">
+  <defs
+     id="defs846" />
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-y="-11"
+     inkscape:window-x="-11"
+     inkscape:window-height="974"
+     inkscape:window-width="1920"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="67.8293"
+     inkscape:cx="102.3967"
+     inkscape:zoom="3.959798"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata849">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-88.797606,-63.174631)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <path
+       inkscape:transform-center-x="2.5e-06"
+       sodipodi:nodetypes="cccccccccc"
+       d="m 91.291131,65.460344 6.8544,8.323151 3.652679,4.435501 v 15.083423 l 6.40331,2.839076 V 78.218996 l 3.65267,-4.435501 6.85426,-8.323151 h -13.70866 z"
+       inkscape:transform-center-y="2.774403"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.12307;stroke-linecap:round"
+       id="path854" />
+  </g>
+</svg>

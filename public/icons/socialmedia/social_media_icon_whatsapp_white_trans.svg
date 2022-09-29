@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="36.485264mm"
+   height="36.201878mm"
+   viewBox="0 0 36.485264 36.201877"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="social_media_icon_whatsapp_white_trans.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="23.968617"
+     inkscape:cy="65.611565"
+     inkscape:document-units="mm"
+     inkscape:current-layer="g8934"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:snap-global="false" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-209.08069,-346.11985)">
+    <g
+       id="g8934"
+       transform="matrix(0.57657409,0,0,0.57657409,-427.51788,156.34392)">
+      <path
+         sodipodi:nodetypes="sccccccscccccccccccccccccccscscccccccc"
+         inkscape:connector-curvature="0"
+         id="path6715-1-8-4"
+         d="m 1136.6725,329.14405 c -16.9622,-2.3e-4 -30.7129,13.75017 -30.7129,30.71233 0.023,4.66 1.0868,9.25602 3.1393,13.43974 l -4.9935,18.63583 18.2916,-4.90138 c 4.4018,2.31811 9.3006,3.53237 14.2755,3.53861 16.9619,-2.4e-4 30.7123,-13.75086 30.7123,-30.7128 -2e-4,-16.96193 -13.7506,-30.71233 -30.7123,-30.71233 z m 0,7.29108 c 12.935,0 23.4211,10.48597 23.4212,23.42125 0,12.93527 -10.4862,23.42149 -23.4212,23.42172 -4.5875,0 -8.8659,-1.32005 -12.4786,-3.59911 l -6.1095,1.31172 c 0,0 0.023,0 0.023,0.0231 l -4.8681,1.30433 0.9138,-3.41017 v 0 l 2.0548,-7.66826 c -1.8728,-3.36675 -2.941,-7.24235 -2.941,-11.36809 0,-12.93528 10.4861,-23.42126 23.4216,-23.42126 z m -7.6778,4.65837 c -0.9154,0.0508 -1.8305,0.10159 -2.7882,0.53356 -0.9573,0.43217 -1.9575,1.2459 -2.7795,2.49157 -0.8218,1.24591 -1.4547,2.8944 -1.5367,5.12958 -0.082,2.23518 0.4093,4.99792 1.6381,8.08265 1.2288,3.08495 3.1951,6.49189 5.5342,9.14468 2.3392,2.65256 5.0508,4.55051 7.4408,6.00822 2.3899,1.45771 4.4713,2.4814 6.5239,3.12214 2.0526,0.64073 4.1035,0.91214 5.9849,0.25108 1.8817,-0.6613 3.5932,-2.25413 4.4747,-3.88137 0.8813,-1.62748 0.9324,-3.28822 0.9832,-4.94918 l -8.6955,-4.32208 -3.7628,5.89804 c -2.7456,-1.62725 -5.491,-3.25402 -7.525,-5.39821 -2.034,-2.1444 -3.3565,-4.80552 -4.6785,-7.46662 l 2.9491,-4.98268 z"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.0901063;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:22.4837;stroke-opacity:1;paint-order:stroke markers fill" />
+    </g>
+  </g>
+</svg>

@@ -40,12 +40,15 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  background-color: rgb(237, 237, 237);
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
 }
 
 .cartCountText {
-  font-size: 22px;
-  transform: translateY(-2px);
-  margin: 0px 5px 0px 0px;
+  color: gray;
+  font-size: 18px;
+  margin: 0px 0px 0px 0px;
 }
 
 .shopSearchInput {
@@ -55,6 +58,7 @@
   border-radius: 5px;
   padding: 15px 10px 15px 10px;
   margin-bottom: 20px;
+  color: white;
 }
 
 .filterContainer {
@@ -76,9 +80,6 @@
 }
 
 /* FILTERS */
-
-.allFiltersContainer {
-}
 
 .allFiltersSubContainerTitle > span {
   /* FONT */
@@ -158,6 +159,7 @@
 .smallCard > img {
   width: 100%;
   margin: auto;
+  margin-bottom: 20px;
   /* border: 1px solid red; */
 }
 
@@ -166,7 +168,8 @@
   height: fit-content;
   margin: 0px 10px 30px 10px;
   padding: 20px 15px 15px 15px;
-  background-color: rgb(255, 251, 202);
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   color: black;
   display: flex;
   flex-direction: column;
@@ -177,26 +180,22 @@
 
 .cardContainerTopFilter {
   border-bottom: 1px solid #424242ff;
-  margin-bottom: 10px;
+  margin: 0px;
   padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   /* FONT */
   font-size: 22px;
   font-weight: bold;
   color: #424242ff;
 }
 
-.cardContainerTopFilter {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0px 0px 0px 0px;
-}
-
 .cardContainerViewOptions {
   cursor: pointer;
-  border-radius: 5px;
-  background-color: #424242ff;
+  border: 0px;
+  background-color: transparent;
   padding: 10px 5px 10px 5px;
   margin: 4px 0px 0px 0px;
   font-size: 16x;
@@ -216,6 +215,10 @@
   flex-wrap: wrap;
   flex-direction: row;
   align-items: flex-start;
+}
+
+.sideBarContainer > i {
+  font-size: 16px;
 }
 
 .sideBarContainer {
@@ -274,7 +277,7 @@
 .smallCardAddToCart {
   /* width: 48%; */
   cursor: pointer;
-  background-color: rgb(116, 115, 98);
+  background-color: rgb(158, 158, 158);
   color: white;
   border-radius: 25px;
   border: 0px;
@@ -286,7 +289,59 @@
 
 .smallCardRemoveFromCart:active,
 .smallCardAddToCart:active {
-  background-color: rgb(171, 169, 143);
+  background-color: rgb(53, 53, 53);
+}
+
+.moblieFilterResetBtn {
+  background: maroon;
+  color: white;
+}
+
+.moblieFilterResetBtn,
+.moblieFilterSubmitBtn {
+  font-weight: bold;
+  font-size: 22px;
+  padding: 15px 10px 15px 10px;
+  border: 0px;
+  border-radius: 10px;
+}
+
+.moblieFilterSubmitContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #424242ff;
+  bottom: 0px;
+  position: fixed;
+  width: 100vw;
+  padding: 20px;
+}
+
+.moblieFilterContainer {
+  top: 0px;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 98;
+}
+
+.filterBtn > img {
+  width: 100%;
+}
+
+.filterBtn {
+  cursor: pointer;
+  bottom: 50px;
+  right: 50px;
+  position: fixed;
+  padding: 15px;
+  border: 0px;
+  width: 70px;
+  height: 70px;
+  border-radius: 70px;
+  background: #424242ff;
 }
 
 @keyframes bounce {
@@ -301,5 +356,36 @@
   100% {
     transform: scale(1.02);
     transform: rotate(-2deg);
+  }
+}
+
+@media (max-width: 720px) {
+  .pageParentContainer {
+    flex-direction: column-reverse;
+  }
+  .sideBarContainer {
+    width: 100%;
+    padding: 0px;
+  }
+  .cardContainerParent {
+    width: 100%;
+    padding: 0px;
+  }
+  .cardContainer {
+    align-items: stretch;
+    justify-content: center;
+  }
+  .smallCard {
+    width: 33%;
+  }
+  .shopSearchInput,
+  .filterContainer {
+    width: 80%;
+  }
+  .shopSearchInput {
+    color: white;
+  }
+  .cardContainerTopFilter {
+    padding: 0px 20px 0px 20px;
   }
 }

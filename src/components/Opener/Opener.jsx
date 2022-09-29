@@ -44,7 +44,7 @@ const Opener = () => {
   const products = business.products;
 
   // BREAKPOINT
-  const breakpoint = useBreakPoint;
+  const breakpoint = useBreakPoint();
 
   // REACT REDUX
   const dispatch = useDispatch();
@@ -81,6 +81,60 @@ const Opener = () => {
   //
   //
   //
+  const Filter = () => {
+    return (
+      <Fragment>
+        <div className={styles.sideBarContainer}>
+          {/* ============== SEARCH ============== */}
+          <i className="fas fa-search" />
+          <i class="fa fa-camera-retro fa-lg"></i>
+          <input
+            className={styles.shopSearchInput}
+            placeholder={"SEARCH PRODUCTS"}
+          />
+          {/* ============== FILTER BY ALL ============== */}
+          <div className={styles.filterContainer}>
+            <h4>Filter</h4>
+            <br />
+
+            {/* ============== FILTER BY PRICE ============== */}
+            <div className={styles.allFiltersContainer}>
+              <div className={styles.allFiltersSubContainer}>
+                <div className={styles.allFiltersSubContainerTitle}>
+                  <span>
+                    <b>Price:</b>
+                  </span>
+                  <span>R100 - R200</span>
+                </div>
+                <ul className={styles.priceRangesToFilterBy}>
+                  <li>R100 - R200</li>
+                  <li>R200 - R600</li>
+                  <li>R600 - R1000</li>
+                  <li>R1000 - R2000</li>
+                  <li>R2000 - R5000</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          {/* ============== FILTER BY TAGS ============== */}
+          <div className={styles.filterContainer}>
+            <h4>Tags</h4>
+            <br />
+            <div className={styles.tagsContainer}>
+              <div className={styles.tag}>caps</div>
+              <div className={styles.tag}>hats</div>
+              <div className={styles.tag}>shoes</div>
+              <div className={styles.tag}>pants</div>
+              <div className={styles.tag}>jeans</div>
+              <div className={styles.tag}>t-shirts</div>
+              <div className={styles.tag}>dress</div>
+              <div className={styles.tag}>high-heels</div>
+            </div>
+          </div>
+        </div>
+      </Fragment>
+    );
+  };
   //
   //
   //
@@ -115,11 +169,8 @@ const Opener = () => {
     return (
       <div className={styles.modalContentParent}>
         <div className={styles.cartCountContainer}>
-          <span className={styles.cartCountText} >{ItemCount(itemID)}</span>
-          <img
-            src={"/icons/pagination/cart/cart_theme_color.svg"}
-            style={{ width: "25px", height: "25px" }}
-          />
+          <span className={styles.cartCountText}>{ItemCount(itemID)}</span>
+          {/* <img src={"/icons/pagination/cart/cart_black.svg"} style= {{ width: "22px", height: "22px" , opacity: 1}} /> */}
         </div>
         <div className={styles.cartButtonContainer}>
           <span
@@ -233,59 +284,23 @@ const Opener = () => {
     <Fragment>
       <div className={"container"}>
         <div className={styles.pageParentContainer}>
-          <div className={styles.sideBarContainer}>
-            {/* ============== SEARCH ============== */}
-            <i className="fas fa-search" style={{ position: "relative" }} />
-            <input
-              className={styles.shopSearchInput}
-              placeholder={"SEARCH PRODUCTS"}
-            />
-            {/* ============== FILTER BY ALL ============== */}
-            <div className={styles.filterContainer}>
-              <h4>Filter</h4>
-              <br />
-
-              {/* ============== FILTER BY PRICE ============== */}
-              <div className={styles.allFiltersContainer}>
-                <div className={styles.allFiltersSubContainer}>
-                  <div className={styles.allFiltersSubContainerTitle}>
-                    <span>
-                      <b>Price:</b>
-                    </span>
-                    <span>R100 - R200</span>
-                  </div>
-                  <ul className={styles.priceRangesToFilterBy}>
-                    <li>R100 - R200</li>
-                    <li>R200 - R600</li>
-                    <li>R600 - R1000</li>
-                    <li>R1000 - R2000</li>
-                    <li>R2000 - R5000</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            {/* ============== FILTER BY TAGS ============== */}
-            <div className={styles.filterContainer}>
-              <h4>Tags</h4>
-              <br />
-              <div className={styles.tagsContainer}>
-                <div className={styles.tag}>caps</div>
-                <div className={styles.tag}>hats</div>
-                <div className={styles.tag}>shoes</div>
-                <div className={styles.tag}>pants</div>
-                <div className={styles.tag}>jeans</div>
-                <div className={styles.tag}>t-shirts</div>
-                <div className={styles.tag}>dress</div>
-                <div className={styles.tag}>high-heels</div>
-              </div>
+          {/* ========== PRODUCT FILTERING MOBILE ========== */}
+          <div className={styles.moblieFilterContainer}>
+            <Filter />
+            <div className={styles.moblieFilterSubmitContainer}>
+              <button className={styles.moblieFilterResetBtn}>RESET</button>
+              <button className={styles.moblieFilterSubmitBtn}>APPLY</button>
             </div>
           </div>
+          {/* ========== PRODUCT FILTERING DESKTOP ========== */}
+          {breakpoint !== "sm" && <Filter />}
+          {/* ========== PRODUCT VIEW ========== */}
           <div className={styles.cardContainerParent}>
             <div className={styles.cardContainerTopFilter}>
               <span>{products.length + " results"}</span>
               <select className={styles.cardContainerViewOptions}>
-                <option value={"grid"}>{"GRID"}</option>
-                <option value={"list"}>{"LIST"}</option>
+                <option value={"grid"}>{"GRID VIEW"}</option>
+                <option value={"list"}>{"LIST VIEW"}</option>
               </select>
             </div>
             <Pagination />
@@ -305,6 +320,12 @@ const Opener = () => {
             <Pagination />
           </div>
         </div>
+        {/* ========== FILTER BUTTON ========== */}
+        {breakpoint === "sm" && (
+          <button className={styles.filterBtn}>
+            <img src="/icons/filter/filter_white.svg" />
+          </button>
+        )}
       </div>
     </Fragment>
   );
