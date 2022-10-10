@@ -53,7 +53,7 @@
 
 .shopSearchInput {
   background-color: #424242ff;
-  width: 90%;
+  width: 100%;
   border: 0px;
   border-radius: 5px;
   padding: 15px 10px 15px 10px;
@@ -67,6 +67,7 @@
   padding: 15px;
   color: white;
   margin: 0px 0px 20px 0px;
+  width: 100%;
 }
 
 .filterContainer > h4 {
@@ -93,6 +94,11 @@
   /* margin: 5px; */
 }
 
+.allFiltersSubContainer > input {
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+}
+
 .allFiltersSubContainerTitle {
   cursor: pointer;
   padding: 5px 7px 5px 7px;
@@ -104,37 +110,54 @@
 }
 
 .priceRangesToFilterBy {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  align-items: flex-start;
-  list-style: none;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* flex-direction: row; */
+  /* align-items: flex-start; */
+  /* list-style: none; */
   padding: 0px;
+  width: 100%;
 }
 
-.priceRangesToFilterBy > li {
+.priceRangesToFilterBy > tr {
+  width: 100%;
+}
+
+.priceRangesToFilterBy > tr > td {
   cursor: pointer;
-  padding: 5px 7px 5px 7px;
-  background-color: rgb(255, 242, 220);
-  border-radius: 10px;
-  margin: 5px;
+  padding: 10px 7px 10px 7px;
+  background-color: rgba(0, 0, 0, 0.2);
   /* FONT */
-  color: black;
+  color: white;
+  font-weight: bold;
+  text-align: center;
 }
 
 /* TAGS */
-.tagsContainer {
+.tagsPopulated {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
+  overflow: scroll;
   flex-direction: row;
   align-items: flex-start;
+  padding-bottom: 10px;
 }
 
-.tag:hover {
+.tagsOptions {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  border-top: 1px solid rgb(110, 110, 110);
+  padding-top: 10px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.tagOption:hover {
   background-color: rgb(213, 213, 213);
 }
 
-.tag {
+.tagOption {
   cursor: pointer;
   padding: 5px 7px 5px 7px;
   background-color: white;
@@ -143,6 +166,46 @@
   /* FONT */
   color: black;
   letter-spacing: 1px;
+  text-overflow: ellipsis;
+}
+
+.tagPopulated {
+  padding: 5px 7px 5px 7px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  /* FONT */
+  color: black;
+  letter-spacing: 1px;
+  text-overflow: ellipsis;
+}
+
+.crossIcon {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  /* background-color: #424242ff; */
+  margin: 3px 0px 0px 4px;
+  /* border: 1px solid red; */
+  position: relative;
+}
+
+.crossIconRight {
+  transform: rotate(45deg);
+}
+.crossIconLeft {
+  transform: rotate(-45deg);
+}
+
+.crossIconLeft,
+.crossIconRight {
+  width: 4px;
+  height: 20px;
+  position: absolute;
+  background-color: red;
+  left: 9px;
 }
 
 /* 
@@ -164,7 +227,7 @@
 }
 
 .smallCard {
-  width: 20%;
+  width: 15%;
   height: fit-content;
   margin: 0px 10px 30px 10px;
   padding: 20px 15px 15px 15px;
@@ -239,9 +302,9 @@
   flex-direction: row;
   align-items: baseline;
   justify-content: space-between;
-  margin: 20px 0px 15px 0px;
+  margin: 20px 0px 5px 0px;
   padding: 10px 0px 10px 0px;
-  border-top: 1px solid #424242ff;
+  border-radius: 5px; 
   border-bottom: 1px solid #424242ff;
 }
 
@@ -295,15 +358,20 @@
 .moblieFilterResetBtn {
   background: maroon;
   color: white;
+  margin-left: 20px;
+}
+
+.moblieFilterSubmitBtn {
+  margin-right: 20px;
 }
 
 .moblieFilterResetBtn,
 .moblieFilterSubmitBtn {
   font-weight: bold;
-  font-size: 22px;
-  padding: 15px 10px 15px 10px;
+  font-size: 16px;
+  padding: 10px 10px 10px 10px;
   border: 0px;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .moblieFilterSubmitContainer {
@@ -315,7 +383,7 @@
   bottom: 0px;
   position: fixed;
   width: 100vw;
-  padding: 20px;
+  padding: 10px 0px 10px 0px;
 }
 
 .moblieFilterContainer {
@@ -359,6 +427,18 @@
   }
 }
 
+@media (max-width: 1363px) {
+  .smallCard {
+    width: 14%;
+  }
+}
+
+@media (max-width: 1154px) {
+  .smallCard {
+    width: 13%;
+  }
+}
+
 @media (max-width: 720px) {
   .pageParentContainer {
     flex-direction: column-reverse;
@@ -378,13 +458,16 @@
   .smallCard {
     width: 33%;
   }
-  .shopSearchInput,
+
+  .shopSearchInput {
+    width: 82.5%;
+    color: white;
+  }
+
   .filterContainer {
     width: 80%;
   }
-  .shopSearchInput {
-    color: white;
-  }
+
   .cardContainerTopFilter {
     padding: 0px 20px 0px 20px;
   }

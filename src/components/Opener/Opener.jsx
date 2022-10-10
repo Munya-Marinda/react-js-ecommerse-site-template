@@ -9,7 +9,8 @@ import { business } from "../../data/business";
 
 // REACT REDUX
 import { addItem, removeItem } from "../../features/cart/cartSlice";
-import { useDispatch } from "react-redux";
+import { modify, clear } from "../../features/query/querySlice";
+import { useDispatch, useSelector } from "react-redux";
 
 // STYLE
 import styles from "./Opener.module.css";
@@ -40,6 +41,22 @@ import styles from "./Opener.module.css";
 
 //
 const Opener = () => {
+  // STATES
+  const [results, setResults] = useState([]);
+
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+
   // GET PRODUCT DATA
   const products = business.products;
 
@@ -48,6 +65,7 @@ const Opener = () => {
 
   // REACT REDUX
   const dispatch = useDispatch();
+  const query = useSelector((state) => state.query);
 
   //
   //
@@ -62,8 +80,31 @@ const Opener = () => {
   //
   //
 
-  const ItemCount = (itemID) => {
+  useEffect(() => {
+    if (query.response.length === 0) {
+      setResults(products);
+    }
+  }, []);
+
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+
+  const ItemCount = (id) => {
     return 0;
+  };
+
+  const QuerySearch = (e) => {
+    dispatch(modify(["search", e.target.value]));
   };
 
   //
@@ -87,10 +128,15 @@ const Opener = () => {
         <div className={styles.sideBarContainer}>
           {/* ============== SEARCH ============== */}
           <i className="fas fa-search" />
-          <i class="fa fa-camera-retro fa-lg"></i>
+          <i className="fa fa-camera-retro fa-lg"></i>
           <input
             className={styles.shopSearchInput}
             placeholder={"SEARCH PRODUCTS"}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                QuerySearch(e);
+              }
+            }}
           />
           {/* ============== FILTER BY ALL ============== */}
           <div className={styles.filterContainer}>
@@ -106,13 +152,22 @@ const Opener = () => {
                   </span>
                   <span>R100 - R200</span>
                 </div>
-                <ul className={styles.priceRangesToFilterBy}>
-                  <li>R100 - R200</li>
-                  <li>R200 - R600</li>
-                  <li>R600 - R1000</li>
-                  <li>R1000 - R2000</li>
-                  <li>R2000 - R5000</li>
-                </ul>
+                <input type={"range"} id={"priceRange"} />
+                <table className={styles.priceRangesToFilterBy}>
+                  <tbody>
+                    <tr>
+                      <td>R100 - R200</td>
+                      <td>R200 - R600</td>
+                    </tr>
+                    <tr>
+                      <td>R600 - R1000</td>
+                      <td>R1000 - R2000</td>
+                    </tr>
+                    <tr>
+                      <td>R2000 - R5000</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -120,15 +175,76 @@ const Opener = () => {
           <div className={styles.filterContainer}>
             <h4>Tags</h4>
             <br />
-            <div className={styles.tagsContainer}>
-              <div className={styles.tag}>caps</div>
-              <div className={styles.tag}>hats</div>
-              <div className={styles.tag}>shoes</div>
-              <div className={styles.tag}>pants</div>
-              <div className={styles.tag}>jeans</div>
-              <div className={styles.tag}>t-shirts</div>
-              <div className={styles.tag}>dress</div>
-              <div className={styles.tag}>high-heels</div>
+            {/* ------ POPULATED OPTIONS ------ */}
+            <div className={styles.tagsPopulated}>
+              <div className={styles.tagPopulated}>
+                caps
+                <div className={styles.crossIcon}>
+                  <div className={styles.crossIconLeft} />
+                  <div className={styles.crossIconRight} />
+                </div>
+              </div>
+              <div className={styles.tagPopulated}>
+                hats
+                <div className={styles.crossIcon}>
+                  <div className={styles.crossIconLeft} />
+                  <div className={styles.crossIconRight} />
+                </div>
+              </div>
+              <div className={styles.tagPopulated}>
+                shoes
+                <div className={styles.crossIcon}>
+                  <div className={styles.crossIconLeft} />
+                  <div className={styles.crossIconRight} />
+                </div>
+              </div>
+              <div className={styles.tagPopulated}>
+                pants
+                <div className={styles.crossIcon}>
+                  <div className={styles.crossIconLeft} />
+                  <div className={styles.crossIconRight} />
+                </div>
+              </div>
+              <div className={styles.tagPopulated}>
+                jeans
+                <div className={styles.crossIcon}>
+                  <div className={styles.crossIconLeft} />
+                  <div className={styles.crossIconRight} />
+                </div>
+              </div>
+              <div className={styles.tagPopulated}>
+                tshirts
+                <div className={styles.crossIcon}>
+                  <div className={styles.crossIconLeft} />
+                  <div className={styles.crossIconRight} />
+                </div>
+              </div>
+              <div className={styles.tagPopulated}>
+                dress
+                <div className={styles.crossIcon}>
+                  <div className={styles.crossIconLeft} />
+                  <div className={styles.crossIconRight} />
+                </div>
+              </div>
+              <div className={styles.tagPopulated}>
+                highheels
+                <div className={styles.crossIcon}>
+                  <div className={styles.crossIconLeft} />
+                  <div className={styles.crossIconRight} />
+                </div>
+              </div>
+            </div>
+
+            {/* ------ OPTIONS TO SELECT ------ */}
+            <div className={styles.tagsOptions}>
+              <div className={styles.tagOption}>caps</div>
+              <div className={styles.tagOption}>hats</div>
+              <div className={styles.tagOption}>shoes</div>
+              <div className={styles.tagOption}>pants</div>
+              <div className={styles.tagOption}>jeans</div>
+              <div className={styles.tagOption}>tshirts</div>
+              <div className={styles.tagOption}>dress</div>
+              <div className={styles.tagOption}>highheels</div>
             </div>
           </div>
         </div>
@@ -145,7 +261,7 @@ const Opener = () => {
   //
   //
 
-  const SmallCard = ({ productName, price, imageURL, itemID, tags }) => {
+  const SmallCard = ({ productName, price, imageURL, id: id, tags }) => {
     return (
       <Fragment>
         <div className={styles.smallCard}>
@@ -155,7 +271,7 @@ const Opener = () => {
             <span className={styles.smallCardPrice}>R{price}</span>
           </div>
           {/* ============== ADD TO CART MODAL ============== */}
-          <ProductsSpecs itemID={itemID} />
+          {/* <ProductsSpecs id={id} /> */}
         </div>
       </Fragment>
     );
@@ -165,18 +281,18 @@ const Opener = () => {
   //
   //
 
-  const ProductsSpecs = ({ itemID }) => {
+  const ProductsSpecs = ({ id }) => {
     return (
       <div className={styles.modalContentParent}>
         <div className={styles.cartCountContainer}>
-          <span className={styles.cartCountText}>{ItemCount(itemID)}</span>
+          <span className={styles.cartCountText}>{ItemCount(id)}</span>
           {/* <img src={"/icons/pagination/cart/cart_black.svg"} style= {{ width: "22px", height: "22px" , opacity: 1}} /> */}
         </div>
         <div className={styles.cartButtonContainer}>
           <span
             className={styles.smallCardRemoveFromCart}
             onClick={() => {
-              dispatch(removeItem(itemID));
+              dispatch(removeItem(id));
             }}
           >
             {"-"}
@@ -185,9 +301,7 @@ const Opener = () => {
             style={{ margin: "0px 0px 0px 5px" }}
             className={styles.smallCardAddToCart}
             onClick={() => {
-              dispatch(
-                addItem({ itemID: itemID, quantity: ItemCount(itemID) + 1 })
-              );
+              dispatch(addItem({ id: id, quantity: ItemCount(id) + 1 }));
             }}
           >
             {"+"}
@@ -284,20 +398,22 @@ const Opener = () => {
     <Fragment>
       <div className={"container"}>
         <div className={styles.pageParentContainer}>
-          {/* ========== PRODUCT FILTERING MOBILE ========== */}
-          <div className={styles.moblieFilterContainer}>
-            <Filter />
-            <div className={styles.moblieFilterSubmitContainer}>
-              <button className={styles.moblieFilterResetBtn}>RESET</button>
-              <button className={styles.moblieFilterSubmitBtn}>APPLY</button>
+          {breakpoint === "sm" && (
+            <div className={styles.moblieFilterContainer}>
+              {/* ========== PRODUCT FILTERING MOBILE ========== */}
+              <Filter />
+              <div className={styles.moblieFilterSubmitContainer}>
+                <button className={styles.moblieFilterResetBtn}>RESET</button>
+                <button className={styles.moblieFilterSubmitBtn}>APPLY</button>
+              </div>
             </div>
-          </div>
+          )}
           {/* ========== PRODUCT FILTERING DESKTOP ========== */}
           {breakpoint !== "sm" && <Filter />}
           {/* ========== PRODUCT VIEW ========== */}
           <div className={styles.cardContainerParent}>
             <div className={styles.cardContainerTopFilter}>
-              <span>{products.length + " results"}</span>
+              <span>{results.length + " results"}</span>
               <select className={styles.cardContainerViewOptions}>
                 <option value={"grid"}>{"GRID VIEW"}</option>
                 <option value={"list"}>{"LIST VIEW"}</option>
@@ -305,13 +421,13 @@ const Opener = () => {
             </div>
             <Pagination />
             <div className={styles.cardContainer}>
-              {products.map((product, index) => (
+              {results.map((product, index) => (
                 <Fragment key={index}>
                   <SmallCard
                     productName={product.productName}
                     price={product.price}
                     imageURL={product.imageURL}
-                    itemID={product.itemID}
+                    id={product.id}
                     tags={products.tags}
                   />
                 </Fragment>

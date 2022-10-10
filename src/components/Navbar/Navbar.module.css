@@ -8,11 +8,18 @@
   top: 0px;
   left: 0px;
   width: 100%;
-  padding: 0px 10px 0px 10px;
+  padding: 15px 25px 15px 25px;
   z-index: 99;
 }
 
+.nav_links {
+  width: 50%;
+  transform: translateX(-55px);
+}
+
 .nav_ul {
+  padding: 0px;
+  margin: 0px;
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -21,6 +28,8 @@
 }
 
 .nav_ul_inner {
+  padding: 0px;
+  margin: 0px;
   list-style: none;
   display: flex;
   flex-direction: row;
@@ -30,17 +39,21 @@
 }
 
 .nav_ul_inner > li {
-  margin: 0px 15px 0px 15px;
+  cursor: pointer;
   /* FONT */
   text-transform: uppercase;
-  color: wheat;
+  color: white;
   font-weight: bold;
-  font-size: larger;
+  font-size: 1.2vw;
   letter-spacing: 1px;
 }
 
 .nav_ul_inner > li:hover {
-  color: white;
+  color: wheat; 
+}
+
+.nav_ul_inner > li > a {
+  all: unset;
 }
 
 @keyframes bounce {
@@ -62,6 +75,6 @@
     padding: 0px 0px 0px 0px;
   }
   .nav_ul {
-    padding: 0px 20px 0px 20px;
+    padding: 0px 22px 0px 22px;
   }
 }

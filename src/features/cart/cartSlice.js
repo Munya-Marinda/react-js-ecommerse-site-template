@@ -44,7 +44,7 @@ export const cartSlice = createSlice({
       // if the cart is not empty
       if (state.items.length > 0) {
         state.items.forEach((item) => {
-          if (action.payload.itemID === item.itemID) {
+          if (action.payload.id === item.id) {
             boolExists = true;
           }
         });
@@ -68,7 +68,7 @@ export const cartSlice = createSlice({
 
       // search and removeItem
       state.items.forEach((item) => {
-        if (action.payload !== item.itemID) {
+        if (action.payload !== item.id) {
           tempCart.push(item);
         } else {
           state.cnt--;

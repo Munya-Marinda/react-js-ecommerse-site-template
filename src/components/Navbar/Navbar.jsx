@@ -117,12 +117,12 @@ const Navbar = () => {
                 height={"40px"}
                 width={"40px"}
                 src={"icons/navbar/drawer_btn.svg"}
-                className={styles.nav_logo}
+                // className={styles.nav_logo}
               />
             )}
           </li>
           {breakpoint !== "sm" ? (
-            <li className="nav_links">
+            <li className={styles.nav_links}>
               <ul className={styles.nav_ul_inner}>
                 <li>
                   <a href={"/store"}>store</a>

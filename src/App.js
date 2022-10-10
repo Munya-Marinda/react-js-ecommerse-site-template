@@ -56,7 +56,7 @@ export default function App() {
 
   // RUN AN ANIMATION ONLOAD
   useEffect(() => {
-    console.log("WE HAVE LOADED!!!");
+    // console.log("WE HAVE LOADED!!!");
   }, []);
 
   //
